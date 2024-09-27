@@ -376,8 +376,7 @@ NS_INLINE BOOL StringsMatchExceptLineBreaks(NSString *expected, NSString *actual
                     }
 
                     @autoreleasepool {
-                        CGRect visibleRect = [collectionView layoutAttributesForItemAtIndexPath:indexPath].frame;
-                        [collectionView scrollRectToVisible:visibleRect animated:NO];
+                        [collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:false];
                         [collectionView layoutIfNeeded];
                         UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
                         NSAssert(cell, @"UICollectionViewCell returned from 'cellForItemAtIndexPath' is unexpectedly nil!");
